@@ -29,11 +29,12 @@ if __name__ == "__main__":
 #make cosine summary, save text
 #make abstract summary, save text
 #update db and continue
-
-    book_url = 'http://bible.geezexperience.com/amharic/download/AmharicBible.pdf'
+    logf = open("out/log.log", "a+")
+    
+    book_url = 'https://www.dirzon.com/Zon/DldAsync?target=telegram%3Amesethiru%20sigalathe.pdf'
     pparser = pp.pdfPrser(book_url)
-
-    if detect_language(pparser.clean_text):
+    lang = detect_language(pparser.clean_text)
+    if  lang == 'am':
         print('woriking...')
         #wordclouds
         print('word cloud...')
@@ -49,4 +50,7 @@ if __name__ == "__main__":
         save_text_file('cosine_summary.txt',cos_summary)
         #abstract summary
         #TODO
+    else:
+        logf.write('language not supported: {0}: {1}\n '.format(book_url, lang))
+
     print('The End')

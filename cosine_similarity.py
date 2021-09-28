@@ -35,7 +35,7 @@ def find_similarities(sentences, stopwords):
     
     #declare how many sentences to use in summary
     num_sentences = text_df.shape[0]
-    num_summary_sentences = int(np.ceil(num_sentences**.5))
+    num_summary_sentences = int(np.ceil(num_sentences**.125))
         
     #find cosine similarity for all sentence pairs
     similarities = cosine_similarity(trsfm, trsfm)
@@ -74,7 +74,7 @@ def build_summary(sentences, stopwords):
     return summary
 
 if __name__ == "__main__":
-        book_url = 'https://www.dirzon.com/Zon/DldAsync?target=telegram%3Amesethiru%20sigalathe.pdf'
+        book_url = ''
         pparser = pp.pdfPrser(book_url)
         article_summary = build_summary(pparser.sentences)
         print(article_summary)

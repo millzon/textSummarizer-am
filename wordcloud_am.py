@@ -43,9 +43,9 @@ def generate_wordcloud(text, stop_words,file_name):
 
     plt.imshow(wordcloud, cmap=plt.cm.gray, interpolation='bilinear')
     plt.axis("off")
-    font_path = 'fonts/Arista2.0.ttf'
-    prop = font_manager.FontProperties(fname=font_path)
-    plt.text(0.5, 3.0, 'dirzon.com', font_properties=prop, fontsize = 16, color='darkorange',ha='center')
+    #font_path = 'fonts/Arista2.0.ttf'
+    #prop = font_manager.FontProperties(fname=font_path)
+    #plt.text(0.5, 3.0, '', font_properties=prop, fontsize = 16, color='darkorange',ha='center')
     
     #plt.show()
     plt.savefig('out\\'+file_name,dpi=600)
