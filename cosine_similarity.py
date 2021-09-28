@@ -35,7 +35,7 @@ def find_similarities(sentences, stopwords):
     
     #declare how many sentences to use in summary
     num_sentences = text_df.shape[0]
-    num_summary_sentences = int(np.ceil(num_sentences**.125))
+    num_summary_sentences = int(np.ceil(num_sentences**.5))
         
     #find cosine similarity for all sentence pairs
     similarities = cosine_similarity(trsfm, trsfm)

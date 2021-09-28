@@ -64,7 +64,7 @@ def fill_watermark(path):
 
 if __name__ == "__main__": 
     #book can be from downloaded  path or from url
-    book_url = 'https://www.dirzon.com/Zon/DldAsync?target=Achamyeleh%20Dessie%3Auutaye.pdf'
+    book_url = ''
     pparser = pp.pdfPrser(book_url)
     generate_wordcloud(pparser.words, pparser.stop_words,'word_cloud.png')
     #fill_watermark('out/word_cloud.png')

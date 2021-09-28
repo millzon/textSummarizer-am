@@ -12,7 +12,6 @@ output_path = os.path.dirname(Path(__file__)) + '/out/'
 
 def detect_language(text):
     model = fasttext.load_model(os.path.dirname(Path(__file__)) + '/fastText/lid.176.ftz')
-    #print(model.predict('የግቤት መሳሪያዎች መስመር ላይ ይሞክሩ', k=1))  # top 2 matching languages
     return model.predict(text, k=1)[0][0][-2:]
 
 def save_text_file(file_name, text):
@@ -31,7 +30,7 @@ if __name__ == "__main__":
 #update db and continue
     logf = open("out/log.log", "a+")
     
-    book_url = 'https://www.dirzon.com/Zon/DldAsync?target=telegram%3Amesethiru%20sigalathe.pdf'
+    book_url = 'https://amnewsupdate.files.wordpress.com/2010/09/asteway.pdf'
     pparser = pp.pdfPrser(book_url)
     lang = detect_language(pparser.clean_text)
     if  lang == 'am':

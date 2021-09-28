@@ -91,5 +91,5 @@ class pdfPrser:
 
 #Test
 if __name__ == '__main__':
-    pd_parser = pdfPrser('https://www.dirzon.com/Zon/DldAsync?target=telegram%3Amesethiru%20sigalathe.pdf')
+    pd_parser = pdfPrser('')
     print(pd_parser.words)
