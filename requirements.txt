@@ -1,0 +1,6 @@
+matplotlib
+wordcloud
+networkx
+nltk
+numpy
+scipy
